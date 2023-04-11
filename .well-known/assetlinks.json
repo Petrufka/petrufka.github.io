@@ -1,5 +1,5 @@
 [{
   "relation": ["delegate_permission/common.handle_all_urls"],
-  "target" : { "namespace": "android_app", "package_name": "com.example.testtwa",
-               "sha256_cert_fingerprints": ["2A:D5:48:89:23:16:54:A4:14:99:C5:17:2D:79:DA:AD:CA:55:B6:97:94:8F:44:2E:D0:84:79:C1:75:7A:41:FE"] }
+  "target" : { "namespace": "android_app", "package_name": "com.example.newtwa",
+               "sha256_cert_fingerprints": ["82:D1:A8:86:AC:95:84:AF:EF:06:A0:F5:CA:C8:D0:5E:23:02:9D:50:14:61:36:88:18:57:B7:80:61:0D:A4:49"] }
 }]
