@@ -1,5 +1,5 @@
 [{
   "relation": ["delegate_permission/common.handle_all_urls"],
-  "target" : { "namespace": "android_app", "package_name": "com.example.newtwa",
-               "sha256_cert_fingerprints": ["82:D1:A8:86:AC:95:84:AF:EF:06:A0:F5:CA:C8:D0:5E:23:02:9D:50:14:61:36:88:18:57:B7:80:61:0D:A4:49"] }
+  "target" : { "namespace": "android_app", "package_name": "io.github.petrufka",
+               "sha256_cert_fingerprints": ["D8:F9:98:B8:72:D0:93:30:A6:46:BE:B4:AA:42:43:AD:66:9E:77:87:36:4C:D9:1E:B9:FB:2D:81:7F:F7:F4:A6"] }
 }]
