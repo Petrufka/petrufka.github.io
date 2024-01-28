@@ -1,19 +1,36 @@
-// Change this to your repository name
-var GHPATH = '';
- 
-// Choose a different app prefix name
-var APP_PREFIX = 'gppwa_';
- 
-// The version of the cache. Every time you change any of the files
-// you need to change this version (version_01, version_02…). 
-// If you don't change the version, the service worker will give your
-// users the old files!
-var VERSION = 'version_00';
- 
-// The files to make available for offline use. make sure to add 
-// others to this list
-var URLS = [    
-  `index.html`,
-  `css/styles.css`,
-  `js/app.js`
-]
+const CACHE_NAME = `pwatest`;
+
+// Use the install event to pre-cache all initial resources.
+self.addEventListener('install', event => {
+  event.waitUntil((async () => {
+    const cache = await caches.open(CACHE_NAME);
+    cache.addAll([
+      '/',
+      '/converter.js',
+      '/converter.css'
+    ]);
+  })());
+});
+
+self.addEventListener('fetch', event => {
+  event.respondWith((async () => {
+    const cache = await caches.open(CACHE_NAME);
+
+    // Get the resource from the cache.
+    const cachedResponse = await cache.match(event.request);
+    if (cachedResponse) {
+      return cachedResponse;
+    } else {
+        try {
+          // If the resource was not in the cache, try the network.
+          const fetchResponse = await fetch(event.request);
+    
+          // Save the resource in the cache and return it.
+          cache.put(event.request, fetchResponse.clone());
+          return fetchResponse;
+        } catch (e) {
+          // The network failed.
+        }
+    }
+  })());
+});
